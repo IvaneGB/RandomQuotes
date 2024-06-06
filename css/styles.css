@@ -60,6 +60,8 @@ body {
     border: solid #4A5567 2px;
     background: none;
     color: #4A5567;
+    transition: 0.1s;
+    cursor: pointer;
 }
 
 
@@ -70,6 +72,14 @@ body {
     width: 50%;
 }
 
+.buttons-box button:nth-child(1):hover {
+    border: solid #6466E9 2.5px;
+    color: #6466E9;
+}
+.buttons-box button:nth-child(1):active {
+    border: solid #a4a5e9 2px;
+    color: #a4a5e9;
+}
 .buttons-box button:nth-child(2) {
     border-radius: 0 0.7rem 0.7rem 0;
     border-left: solid #4A5567 1px;
@@ -77,6 +87,15 @@ body {
     width: 50%;
 }
 
+.buttons-box button:nth-child(2):hover {
+    border: solid #6466E9 2.5px;
+    color: #6466E9;
+}
+
+.buttons-box button:nth-child(2):active {
+    border: solid #a4a5e9 2px;
+    color: #a4a5e9;
+}
 .buttons-box button span{
     width: 100%;
     font-size: 1.8rem;
