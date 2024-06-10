@@ -1,4 +1,6 @@
+import callApi from "./api.js";
 
+console.log(callApi);
 
 let quote = document.getElementById('quote');
 let author = document.getElementById('author');
@@ -9,19 +11,33 @@ let frase = '';
 let autor = '';
 let tags = [];
 
-async function fetchQuote() {
-    try {
-        const response = await fetch('https://api.quotable.io/random');
-        const data = await response.json();
-        frase = `${data.content}`;
-        autor = `${data.author}`;
-        // tags = `${data.tags}`;
-        tags = data.tags;
+// async function fetchQuote() {
+//     try {
+//         const response = await fetch('https://api.quotable.io/random');
+//         const data = await response.json();
+//         frase = `${data.content}`;
+//         autor = `${data.author}`;
+//         // tags = `${data.tags}`;
+//         tags = data.tags;
 
-        return { frase, autor, tags };
-    } catch (error) {
-        console.log(error);
-    }
+//         return { frase, autor, tags };
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// dame la función para usar callApi y usar los datos .content,.author y .tags
+
+async function fetchQuote() {
+  try {
+    const response = await callApi.getQuotes();
+    frase = `${response.content}`;
+    autor = `${response.author}`;
+    // tags = `${data.tags}`;
+    tags = response.tags;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function displayQuote() {
