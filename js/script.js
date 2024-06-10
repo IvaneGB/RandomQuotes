@@ -4,6 +4,7 @@ let quote = document.getElementById('quote');
 let author = document.getElementById('author');
 let etiquetas = document.getElementById('tags');
 let bntNewQuote = document.getElementById('new-quote');
+let btnCopyQuote = document.getElementById('copy-quote');
 let frase = '';
 let autor = '';
 let tags = [];
@@ -37,8 +38,32 @@ async function displayQuote() {
         tagElement.textContent = tag;
         etiquetas.appendChild(tagElement);
     });
-    console.log(tags);
+    
 }
 
-
+displayQuote();
 bntNewQuote.addEventListener('click', displayQuote);
+
+// boton copiar al portapapeles
+
+btnCopyQuote.addEventListener('click', copyQuoteToClipboard);
+
+
+// Función para copiar la cita al portapapeles
+function copyQuoteToClipboard() {
+  // Selecciona la frase
+  let quoteText = document.getElementById('quote').innerText;
+
+  // Intenta copiar el texto al portapapeles
+  navigator.clipboard.writeText(quoteText)
+    .then(() => {
+      // Éxito: el texto se copió al portapapeles
+      console.log('Cita copiada al portapapeles:', quoteText);
+      // Aquí podrías mostrar un mensaje de éxito al usuario si lo deseas
+    })
+    .catch(err => {
+      // Error: no se pudo copiar el texto al portapapeles
+      console.error('Error al copiar la cita al portapapeles:', err);
+      // Aquí podrías mostrar un mensaje de error al usuario si lo deseas
+    });
+}

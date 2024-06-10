@@ -100,6 +100,22 @@ body {
     font-size: 1.8rem;
 }
 
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+
 h1 {
     color: white    ;
     margin: 0;
@@ -130,23 +146,50 @@ h1 {
     color: #98a3b7;
 }
 
-@media screen and (min-width: 720px) {
-    .logo {
-        display: initial;
+/* Estilos para dispositivos móviles (por ejemplo, ancho máximo de 767px) */
+@media only screen and (max-width: 600px) {
+    body {
+      padding: 2rem; /* Reducir el padding del cuerpo */
+    }
+  
+    .container {
+      height: auto; /* Ajustar la altura automáticamente */
+      padding: 2rem 1rem; /* Reducir el padding de la container */
     }
 
-    .get-started {
-        width: auto;
+    .tags p{
+        margin: auto auto;
+        margin-right: 5%;
     }
-
-    main {
-        flex-direction: row;
+  
+    .Box-frase {
+      width: 80%; /* Reducir el ancho del Box-frase */
+      padding: 1.5rem; /* Reducir el padding del Box-frase */
     }
-
-    footer {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
+  
+    .buttons-box {
+      width: 50%; /* Reducir el ancho del buttons-box */
+      margin: 10%;
     }
-
-}
+  }
+  
+  /* Estilos para dispositivos tipo iPad mini en adelante (por ejemplo, ancho mínimo de 768px) */
+  
+  @media only screen and (min-width: 601px) and (max-width: 1400px) {
+    .container {
+      height: 90vh; /* Reducir la altura de la container */
+    }
+  
+    .Box-frase {
+      width: 65%; /* Reducir el ancho del Box-frase */
+    }
+  
+    .buttons-box {
+      width: 24%; /* Reducir el ancho del buttons-box */
+      margin: 5%;
+    }
+    .buttons-box button span{
+        font-size: 2.5rem;
+    }
+  }
+  
