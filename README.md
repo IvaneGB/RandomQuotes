@@ -8,3 +8,4 @@ Este es un proyecto simple que muestra citas aleatorias utilizando la API de Quo
 - **Copiar cita**: Al hacer clic en el botón de "copiar cita", se copia la cita al portapapeles y se muestra un tooltip indicando la acción.
 
 link: 
+https://ivanegb.github.io/RandomQuotes/
