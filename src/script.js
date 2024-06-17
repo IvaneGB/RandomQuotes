@@ -26,7 +26,6 @@ let tags = [];
 //     }
 // }
 
-// dame la función para usar callApi y usar los datos .content,.author y .tags
 
 async function fetchQuote() {
   try {
